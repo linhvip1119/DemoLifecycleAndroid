@@ -78,8 +78,8 @@ class FirstFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         Log.i(TAG, "onViewCreated: 1")
         binding.buttonFirst.setOnClickListener {
-//            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-           context?.showDialogConfirmOrCancelData()
+            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+//           context?.showDialogConfirmOrCancelData()
         }
     }
 
