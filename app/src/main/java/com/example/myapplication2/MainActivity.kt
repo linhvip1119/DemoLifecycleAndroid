@@ -3,12 +3,14 @@ package com.example.myapplication2
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import com.example.myapplication2.FirstFragment.Companion.TAG
 import com.example.myapplication2.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -21,6 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        Log.i(TAG, "ActivityonCreate: ")
 
         setSupportActionBar(binding.toolbar)
 
@@ -32,6 +35,36 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i(TAG, "ActivityonStart: ")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i(TAG, "ActivityonResume: ")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i(TAG, "ActivityonPause: ")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i(TAG, "ActivityonStop: ")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i(TAG, "ActivityonDestroy: ")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.i(TAG, "ActivityonRestart: ")
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
